@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Меню Додо Пиццы</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+    <input id="search" type="search" placeholder="🔍 Поиск по меню..." autocomplete="off">
+</header>
+
+<nav id="categories" class="categories"></nav>
+
+<div id="stale-banner" class="stale-banner hidden">
+    ⚠️ Данные могут быть устаревшими — обновление было давно.
+</div>
+
+<main id="grid" class="grid"></main>
+
+<div id="empty" class="empty hidden">
+    <p>Меню пока пусто. Попробуй позже — данные обновляются автоматически.</p>
+</div>
+
+<div id="loader" class="loader">Загрузка…</div>
+
+<div id="modal" class="modal hidden" onclick="closeModal(event)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <button class="modal-close" onclick="closeModal()">×</button>
+        <img id="m-img" alt="">
+        <h2 id="m-name"></h2>
+        <p id="m-desc"></p>
+        <div class="modal-price"><span id="m-price"></span></div>
+    </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
